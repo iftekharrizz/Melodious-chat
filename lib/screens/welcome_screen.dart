@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:melodious_chat/constants.dart';
 import 'package:melodious_chat/screens/login_screen.dart';
 import 'package:melodious_chat/screens/registration_screen.dart';
 
@@ -20,9 +21,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              child: Image.asset('images/logo.png'),
-              height: 140.0,
+            Hero(
+              tag: 'logo',
+              child: Container(
+                child: Image.asset('images/logo.png'),
+                height: 130.0,
+              ),
             ),
             SizedBox(
               height: 20,
@@ -33,9 +37,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Text(
                   'Melodious',
                   style: TextStyle(
-                      fontSize: 45.0,
-                      fontWeight: FontWeight.w900,
-                      color: Color(0xffFF7477)),
+                    fontSize: 45.0,
+                    fontWeight: FontWeight.w900,
+                    color: Color(0xffFF7477),
+                  ),
                   textAlign: TextAlign.center,
                 ),
                 Text(
@@ -55,7 +60,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
                 elevation: 5.0,
-                color: Colors.lightBlueAccent,
+                color: kButtonAccentColor1,
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
                   onPressed: () {
@@ -72,7 +77,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.blueAccent,
+                color: Color(0xff2E2E20),
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
