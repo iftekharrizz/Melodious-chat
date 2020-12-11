@@ -4,8 +4,6 @@ import 'package:melodious_chat/buttons.dart';
 import 'package:melodious_chat/constants.dart';
 import 'package:melodious_chat/screens/chat_screen.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'dart:async';
-
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
 
