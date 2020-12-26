@@ -87,9 +87,9 @@ class _ChatState extends State<Chat> {
                 print('the button is pressed');
                 isinActive
                     ? melody.open(Audio(
-                  'assets/audios/track3.mp3',
-                ))
-                    : melody.stop();
+                        'assets/audios/track3.mp3',
+                      ))
+                    : melody.pause();
                 if (isinActive == true) {
                   isinActive = false;
                   setState(() {});
