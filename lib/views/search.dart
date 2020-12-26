@@ -138,6 +138,12 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Icon(Icons.arrow_back_ios),
+        ),
+        title: Text("Search your friend"),
+        centerTitle: true,
         backgroundColor: kButtonAccentColor1,
       ),
       body: isLoading
@@ -157,37 +163,37 @@ class _SearchState extends State<Search> {
                       children: [
                         Expanded(
                           child: TextField(
-                            controller: searchEditingController,
-                            style: simpleTextStyle(),
-                            decoration: InputDecoration(
-                                hintText: "search username ...",
-                                hintStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                ),
-                                border: InputBorder.none),
-                          ),
+                              controller: searchEditingController,
+                              style: simpleTextStyle(),
+                              decoration: kRegisterTextFieldDecoration.copyWith(
+                                  hintText: "Search by username...")),
+                        ),
+                        SizedBox(
+                          width: 15,
                         ),
                         GestureDetector(
                           onTap: () {
                             initiateSearch();
                           },
                           child: Container(
-                            height: 40,
-                            width: 40,
+                            height: 50,
+                            width: 50,
                             decoration: BoxDecoration(
-                                gradient: LinearGradient(
+                                color: kButtonAccentColor2,
+                                /*gradient: LinearGradient(
                                     colors: [
-                                      //const Color(0x36FFFFFF),
-                                      //const Color(0x0FFFFFFF)
-                                      Colors.red,
-                                      Colors.green,
+                                      const Color(0x36FFFFFF),
+                                      const Color(0x0FFFFFFF)
                                     ],
                                     begin: FractionalOffset.topLeft,
-                                    end: FractionalOffset.bottomRight),
-                                borderRadius: BorderRadius.circular(40)),
+                                    end: FractionalOffset.bottomRight),*/
+                                borderRadius: BorderRadius.circular(30)),
                             padding: EdgeInsets.all(12),
-                            child: Icon(Icons.search),
+                            child: Center(
+                                child: Icon(
+                              Icons.search,
+                              color: Colors.white,
+                            )),
                           ),
                         )
                       ],

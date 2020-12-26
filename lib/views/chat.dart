@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:melodious_chatapp/helper/constants.dart';
 import 'package:melodious_chatapp/services/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,6 +18,8 @@ class _ChatState extends State<Chat> {
   Stream<QuerySnapshot> chats;
   Firestore _firestore = Firestore.instance;
   TextEditingController messageEditingController = new TextEditingController();
+  bool isinActive = true;
+  final melody = AssetsAudioPlayer();
 
   //ScrollController _scrollController = new ScrollController();
 
@@ -66,11 +69,11 @@ class _ChatState extends State<Chat> {
           final author = messageData['sendBy'];
           final text = messageData['message'];
 
-          print(text);
-          print("   sent by   $author");
+          // print(text);
+          // print("   sent by   $author");
           //final currentUser = loggedInUser.email;
           final messageDataWidget =
-              MessageBubble(text: text, isMe: Constants.myName == author);
+          MessageBubble(text: text, isMe: Constants.myName == author);
           messageWidgets.add(messageDataWidget);
         }
         return Expanded(
@@ -114,10 +117,34 @@ class _ChatState extends State<Chat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: null,
-        actions: <Widget>[],
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+            melody.stop();
+          },
+          child: Icon(Icons.arrow_back_ios),
+        ),
+        actions: <Widget>[
+          IconButton(
+              icon: isinActive ? Icon(Icons.play_arrow) : Icon(Icons.pause),
+              onPressed: () {
+                print('the button is pressed');
+                isinActive
+                    ? melody.open(Audio(
+                  'assets/audios/track3.mp3',
+                ))
+                    : melody.stop();
+                if (isinActive == true) {
+                  isinActive = false;
+                  setState(() {});
+                } else {
+                  isinActive = true;
+                  setState(() {});
+                }
+              }),
+        ],
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 60),
+          padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Row(
             children: [
               Container(
@@ -164,20 +191,23 @@ class _ChatState extends State<Chat> {
                     width: 20,
                   ),
                   Expanded(
+                    flex: 7,
                     child: TextField(
                       controller: messageEditingController,
                       decoration: kRegisterTextFieldDecoration,
                     ),
                   ),
-                  FlatButton(
-                      onPressed: () {
-                        addMessage();
-                      },
-                      child: Icon(
-                        Icons.send,
-                        color: kButtonAccentColor2,
-                        size: 35,
-                      )),
+                  Expanded(
+                    child: FlatButton(
+                        onPressed: () {
+                          addMessage();
+                        },
+                        child: Icon(
+                          Icons.send,
+                          color: kButtonAccentColor2,
+                          size: 35,
+                        )),
+                  ),
                 ],
               ),
             ),

@@ -59,7 +59,7 @@ class _ChatRoomState extends State<ChatRoom> {
     DatabaseMethods().getUserChats(Constants.myName).then((snapshots) {
       setState(() {
         chatRooms = snapshots;
-        loggedInUserName = Constants.myName.toUpperCase();
+        loggedInUserName = Constants.myName;
         //print("we got the data + ${chatRooms.toString()} this is name  ${Constants.myName}");
       });
     });
@@ -95,9 +95,19 @@ class _ChatRoomState extends State<ChatRoom> {
                 ),
                 new GestureDetector(
                   onTap: () => Navigator.of(context).pop(true),
-                  child: Text(
-                    "EXIT",
-                    style: TextStyle(fontSize: 18, color: Colors.red),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: 50,
+                    height: 30,
+                    child: Center(
+                      child: Text(
+                        "EXIT",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                    ),
                   ),
                 ),
               ],
