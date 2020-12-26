@@ -1,6 +1,6 @@
-# melodious_chat
+# melodious_chatapp
 
-A simple chat application with exciting features.
+A new Flutter application.
 
 ## Getting Started
 

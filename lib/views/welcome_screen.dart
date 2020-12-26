@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:melodious_chat/constants.dart';
-import 'package:melodious_chat/screens/login_screen.dart';
-import 'package:melodious_chat/screens/registration_screen.dart';
+import 'package:melodious_chatapp/helper/authenticate.dart';
+import 'package:melodious_chatapp/helper/buttons.dart';
+import 'package:melodious_chatapp/views/signup.dart';
+import 'signin.dart';
+import 'package:melodious_chatapp/helper/constants.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-
-import '../buttons.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -27,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Hero(
               tag: 'logo',
               child: Container(
-                child: Image.asset('images/logo.png'),
+                child: Image.asset('assets/images/logo.png'),
                 height: 130.0,
               ),
             ),
@@ -66,7 +66,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 onTap: () {},
                 text: ["Listen to the melody of conversations..."],
                 textAlign: TextAlign.center,
-                textStyle: TextStyle(fontFamily: 'DancingScript', fontSize: 20),
+                textStyle: TextStyle(fontFamily: 'Dancing', fontSize: 20),
               ),
             ),
             SizedBox(
@@ -74,17 +74,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             UserButton(
               onTap: () {
-                Navigator.pushNamed(context, LoginScreen.id);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Authenticate(true)));
               },
               btnColor: kButtonAccentColor1,
-              label: 'Log In',
+              label: 'Sign In',
             ),
             UserButton(
               onTap: () {
-                Navigator.pushNamed(context, RegistrationScreen.id);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Authenticate(false)));
               },
               btnColor: kButtonAccentColor2,
-              label: 'Register ',
+              label: 'Sign Up',
             ),
           ],
         ),
@@ -92,4 +98,3 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
-

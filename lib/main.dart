@@ -1,26 +1,60 @@
+import 'package:melodious_chatapp/helper/authenticate.dart';
+import 'package:melodious_chatapp/helper/helperfunctions.dart';
+import 'package:melodious_chatapp/views/chatrooms.dart';
 import 'package:flutter/material.dart';
-import 'package:melodious_chat/screens/welcome_screen.dart';
-import 'package:melodious_chat/screens/login_screen.dart';
-import 'package:melodious_chat/screens/registration_screen.dart';
-import 'package:melodious_chat/screens/chat_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:melodious_chatapp/views/signin.dart';
+import 'package:melodious_chatapp/views/signup.dart';
+import 'package:melodious_chatapp/views/welcome_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MelodiousChat());
+void main() {
+  runApp(MyApp());
 }
 
-class MelodiousChat extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool userIsLoggedIn;
+
+  @override
+  void initState() {
+    getLoggedInState();
+    super.initState();
+  }
+
+  getLoggedInState() async {
+    await HelperFunctions.getUserLoggedInSharedPreference().then((value) {
+      setState(() {
+        userIsLoggedIn = value;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: WelcomeScreen.id,
+      title: 'FlutterChat',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Color(0xff145C9E),
+        scaffoldBackgroundColor: Colors.white,
+        accentColor: Color(0xffFF7477),
+        fontFamily: "OverpassRegular",
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: userIsLoggedIn != null
+          ? userIsLoggedIn ? ChatRoom() : WelcomeScreen()
+          : Container(
+              child: Center(
+                child: WelcomeScreen(),
+              ),
+            ),
       routes: {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id: (context) => LoginScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-        ChatScreen.id: (context) => ChatScreen(),
+        SignIn.id: (context) => SignIn(),
+        SignUp.id: (context) => SignUp(),
       },
     );
   }

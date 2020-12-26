@@ -10,7 +10,7 @@ class UserButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
+      padding: EdgeInsets.symmetric(vertical: 12.0),
       child: Material(
         elevation: 5.0,
         color: btnColor,
@@ -21,9 +21,7 @@ class UserButton extends StatelessWidget {
           height: 42.0,
           child: Text(
             label,
-            style: TextStyle(
-              color: Colors.white,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 15),
           ),
         ),
       ),

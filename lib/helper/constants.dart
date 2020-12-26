@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+class Constants {
+  static String myName = "";
+}
+
 const kSendButtonTextStyle = TextStyle(
   color: Colors.lightBlueAccent,
   fontWeight: FontWeight.bold,
@@ -9,12 +13,16 @@ const kSendButtonTextStyle = TextStyle(
 const kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   hintText: 'Type your message here...',
-  border: InputBorder.none,
+  hintStyle: TextStyle(color: Colors.white),
+  border: OutlineInputBorder(),
+  fillColor: kButtonAccentColor2,
+  filled: true,
 );
 
 const kMessageContainerDecoration = BoxDecoration(
+  //gradient: Gradient(),
   border: Border(
-    top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+    top: BorderSide(color: Colors.white, width: 10),
   ),
 );
 
@@ -59,3 +67,12 @@ const kRegisterTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
 );
+
+const kMessageBubbleAuthorBorder = BorderRadius.only(
+    topLeft: Radius.circular(30),
+    bottomLeft: Radius.circular(30.0),
+    topRight: Radius.circular(30.0));
+const kMessageBubbleOthersBorder = BorderRadius.only(
+    topRight: Radius.circular(30),
+    bottomLeft: Radius.circular(30.0),
+    bottomRight: Radius.circular(30.0));

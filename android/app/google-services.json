@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "178927660258",
+    "project_id": "melodiouschat",
+    "storage_bucket": "melodiouschat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178927660258:android:cb67cac80c9bbdff3742bb",
+        "android_client_info": {
+          "package_name": "com.iffyrizz.melodious_chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178927660258-t2jpnobpd03tcer0qm8jg3265sge2ql0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6eA5a18_RHApBXZwGmpmux27XxccZrAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178927660258-t2jpnobpd03tcer0qm8jg3265sge2ql0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
