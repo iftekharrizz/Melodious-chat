@@ -43,50 +43,6 @@ class _ChatState extends State<Chat> {
       },
     );
   }
-
-  Widget chatttMessages() {
-    String chatRoomId = widget.chatRoomId;
-
-    return StreamBuilder<QuerySnapshot>(
-      stream: _firestore
-          .collection("chatRoom")
-          .document(chatRoomId)
-          .collection("chats")
-          .orderBy('time', descending: true)
-          .snapshots(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return Center(
-            child: CircularProgressIndicator(
-              backgroundColor: kButtonAccentColor1,
-            ),
-          );
-        }
-        List<MessageBubble> messageWidgets = [];
-        final messages = snapshot.data.documents;
-        for (var message in messages) {
-          final messageData = message.data;
-          final author = messageData['sendBy'];
-          final text = messageData['message'];
-
-          // print(text);
-          // print("   sent by   $author");
-          //final currentUser = loggedInUser.email;
-          final messageDataWidget =
-          MessageBubble(text: text, isMe: Constants.myName == author);
-          messageWidgets.add(messageDataWidget);
-        }
-        return Expanded(
-          child: ListView(
-            reverse: true,
-            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-            children: messageWidgets,
-          ),
-        );
-      },
-    );
-  }
-
   addMessage() {
     if (messageEditingController.text.isNotEmpty) {
       Map<String, dynamic> chatMessageMap = {
