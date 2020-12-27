@@ -2,7 +2,7 @@
 <br>
 It is an android application where users can chat with their close ones while listening a background melody in the conversation for my <b>Project 300 </b>course.</p>
 
-## 🤙🏻 Features :
+## Features :
 👌  Nice looking login and registration </br>
 👌  Recover password if it is forgotten </br>
 👌  It is a cross platform app.(Android, IOS, Web) </br>
@@ -13,8 +13,14 @@ It is an android application where users can chat with their close ones while li
 👌  Used : Flutter, Dart </br>
 
 ## 📸 Images
-![](https://github.com/Farhan-meb/YourCommunity/blob/main/screenshots/1.jpg) <br>
-
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/1.jpeg) <br>
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/2.jpeg) <br>
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/3.jpeg) <br>
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/4.jpeg) <br>
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/6.jpeg) <br>
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/5.jpeg) <br>
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/7.jpeg) <br>
+![](https://github.com/iftekharrizz/Melodious-chat/blob/master/screenshots/8.jpeg) <br>
  
 
 
