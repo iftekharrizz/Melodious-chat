@@ -4,13 +4,13 @@ It is an android application where users can chat with their close ones while li
 
 ## 🤙🏻 Features :
 👌  Nice looking login and registration </br>
-👌  Recover password if it is forgotten
-👌  It is a cross platform app.(Android, IOS, Web)
-👌  User can chat with others
-👌  User can search for existing users
-👌  User can play/pause the background melody
-👌  They can chat with each other from anywhere with a working internet connection
-👌  Used : Flutter, Dart
+👌  Recover password if it is forgotten </br>
+👌  It is a cross platform app.(Android, IOS, Web) </br>
+👌  User can chat with others </br>
+👌  User can search for existing users </br>
+👌  User can play/pause the background melody </br>
+👌  They can chat with each other from anywhere with a working internet connection </br>
+👌  Used : Flutter, Dart </br>
 
 ## 📸 Images
 ![](https://github.com/Farhan-meb/YourCommunity/blob/main/screenshots/1.jpg) <br>
