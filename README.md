@@ -1,6 +1,24 @@
-# melodious_chatapp
+# Melodious Chat
+<br>
+It is an android application where users can chat with their close ones while listening a background melody in the conversation for my <b>Project 300 </b>course.</p>
 
-A new Flutter application.
+## 🤙🏻 Features :
+👌  Nice looking login and registration
+👌  Recover password if it is forgotten
+👌  It is a cross platform app.(Android, IOS, Web)
+👌  User can chat with others
+👌  User can search for existing users
+👌  User can play/pause the background melody
+👌  They can chat with each other from anywhere with a working internet connection
+👌  Used : Flutter, Dart
+
+## 📸 Images
+![](https://github.com/Farhan-meb/YourCommunity/blob/main/screenshots/1.jpg) <br>
+
+ 
+
+
+
 
 ## Getting Started
 
