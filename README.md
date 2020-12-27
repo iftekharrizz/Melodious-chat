@@ -3,7 +3,7 @@
 It is an android application where users can chat with their close ones while listening a background melody in the conversation for my <b>Project 300 </b>course.</p>
 
 ## 🤙🏻 Features :
-👌  Nice looking login and registration
+👌  Nice looking login and registration </br>
 👌  Recover password if it is forgotten
 👌  It is a cross platform app.(Android, IOS, Web)
 👌  User can chat with others
